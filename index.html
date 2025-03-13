@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menghitung Luas Bangun Datar</title>
+    <script>
+      // Fungsi menghitung luas persegi panjang
+      function luasPersegiPanjang(panjang, lebar) {
+        return panjang * lebar;
+      }
+
+      // Fungsi menghitung luas bujur sangkar
+      function luasBujurSangkar(sisi) {
+        return sisi * sisi;
+      }
+
+      // Fungsi menghitung luas segitiga
+      function luasSegitiga(alas, tinggi) {
+        return (alas * tinggi) / 2;
+      }
+
+      function hitungLuas() {
+        let panjang = parseFloat(document.getElementById("panjang").value);
+        let lebar = parseFloat(document.getElementById("lebar").value);
+        let sisi = parseFloat(document.getElementById("sisi").value);
+        let alas = parseFloat(document.getElementById("alas").value);
+        let tinggi = parseFloat(document.getElementById("tinggi").value);
+
+        document.getElementById("hasilPersegiPanjang").innerText =
+          "Luas Persegi Panjang: " + luasPersegiPanjang(panjang, lebar);
+        document.getElementById("hasilBujurSangkar").innerText =
+          "Luas Bujur Sangkar: " + luasBujurSangkar(sisi);
+        document.getElementById("hasilSegitiga").innerText =
+          "Luas Segitiga: " + luasSegitiga(alas, tinggi);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Menghitung Luas Bangun Datar</h2>
+    <label>Panjang: <input type="number" id="panjang" /></label><br />
+    <label>Lebar: <input type="number" id="lebar" /></label><br />
+    <label>Sisi: <input type="number" id="sisi" /></label><br />
+    <label>Alas: <input type="number" id="alas" /></label><br />
+    <label>Tinggi: <input type="number" id="tinggi" /></label><br />
+    <button onclick="hitungLuas()">Hitung</button>
+    <p id="hasilPersegiPanjang"></p>
+    <p id="hasilBujurSangkar"></p>
+    <p id="hasilSegitiga"></p>
+  </body>
+</html>
